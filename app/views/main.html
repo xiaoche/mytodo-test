@@ -12,8 +12,13 @@
       </div>
     </div>
   </form>
-
-  <p ng-repeat="todo in todos" class="from-group">
-    <input type="text" ng-model="todo" class="form-control">
-  </p>
+  <div ui-sortable ng-model="todos">
+    <p ng-repeat="todo in todos" class="input-group" style="padding:5px 10px; cursor:move">
+      <input type="text" ng-model="todo" class="form-control">
+      <span class="input-group-btn">
+        <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
+      </span>
+    </p>
+  </div>
+  
 </div>

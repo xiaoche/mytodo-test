@@ -8,18 +8,20 @@
  * Controller of the mytodoApp
  */
 angular.module('mytodoApp')
-  // .controller('MainCtrl', function ($scope) {
-  //   $scope.awesomeThings = [
-  //     'HTML5 Boilerplate',
-  //     'AngularJS',
-  //     'Karma'
-  //   ];
-  // });
-  .controller('MainCtrl', function ($scope){
-  	$scope.todos = ['Item 1', 'Item 2','Item 3'];
-  	&scope.addTodo = function(){
+  .controller('MainCtrl', function ($scope,localStorageService){
+  	// $scope.todos = ['Item 1', 'Item 2','Item 3'];
+  	var todoInStore = localStorageService.get('todos');
+  	$scope.todos = todoInStore && todoInStore.split('\n') || [];
+  	$scope.$watch('todos',function(){
+  		localStorageService.add('todos',$scope.todos.join('\n'));
+  	}, true);
+
+  	$scope.addTodo = function(){
   		$scope.todos.push($scope.todo);
-  		&scope.todo = '';
+  		$scope.todo = '';
+  	}
+  	$scope.removeTodo = function(index){
+  		$scope.todos.splice(index, 1);
   	}
   })
 

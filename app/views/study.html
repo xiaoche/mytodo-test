@@ -1,0 +1,35 @@
+<div>
+	<!-- Your name <input type="text" ng-model="yourname" placeholder="Word">
+	<br />
+	Hello {{ yourname || 'Word'}}!
+	<p>1 + 2 = {{ 1 + 2 }}</p>
+	<input type="text" ng-model="num1"> + <input type="text" ng-model="num2"> = {{ num1 + num2 }}
+	<p>{{phones.length}}</p>
+	
+	<label for="">Search:</label>
+	<input type="text" ng-model="search">
+	<h5>{{thinged.length}}</h5>
+	<li ng-repeat="thing in thinged = ( things | filter:search)">{{ thing.name }} {{ thing.use }}</li>
+
+	<h3>Controller</h3>
+	<label for="">Name:</label>
+	<input type="text" ng-model="name" placeholder="Ender a name here">
+	<br>
+	<label for="">Age:</label>
+	<input type="text" ng-model="age" placeholder="Ender a number here">
+	
+	<h4>{{ name }} {{ age }}</h4> -->
+	<hr>
+	<h3>ngShow ngHide</h3>
+	<label for="">
+		show? <input type="checkbox" ng-model="checked">
+	</label>
+	<!-- <h4 ng-show="checked">xiaoche</h4> -->
+	<label for="">
+		English?
+		<input type="checkbox" ng-model="eng" ng-true-value="en.made-in-china" ng-false-value="cn.made-in-china">
+	</label>
+	<h4 ng-show="checked">{{eng}}</h4>
+
+
+</div>
