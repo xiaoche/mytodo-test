@@ -60,17 +60,28 @@
 		.people-even-true{
 			color: purple;
 		}
+		.even-true{
+			color: purple;
+		}
 	</style>
 	<div class="well span6">
-		<h2 ng-repeat-start="people in peoples">{{ people.name }}</h2>
-		<div class="alert alert-info">
+		<div>
+			<lable class="control-lable" for="name">Name:</lable>
+			<input type="text" id="name" placeholder="Name" ng-model="pName">
+				
+			<label for="age" class="control-label">Age:</label>
+			<input type="number" id="age" placeholder="Age" ng-model="pAge">
+			<br />
+			<button class="btn" ng-click="add()">Add</button>
+		</div>
+		<h3>共有 {{peoples.length}} 人 </h3>
+		<h4 ng-repeat-start="people in peoples" class="even-{{ $even }}">{{ people.name }}</h4>
+		<div class="alert alert-info" ng-repeat-end>
+			<button class="close" ng-click="remove($index);">&times;</button>
 			{{ people.name }} <span class="badge badeg-important">{{ people.age }}</span>
+		
 		</div>
-		<div class="progress" ng-repeat-end>
-			<div class="progress-bar progress-bar-success progress-bar-striped active"  style="width: {{ people.age }}%">
-				<span class="sr-only"></span>
-			</div>
-		</div>
+		
 		
 	</div>
 

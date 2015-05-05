@@ -37,5 +37,18 @@ angular.module('mytodoApp')
       {name: '小红' , sex: 'female' , age: '28'},
       {name: '小龙' , sex: 'male' , age: '32'},
     ];
+    
+    $scope.add = function () {
+      $scope.peoples.push({
+        name: $scope.pName,
+        age: $scope.pAge
+      });
+      $scope.pName = '';
+      $scope.pAge = '';
+      
+    };
+    $scope.remove = function (index) {
+      $scope.peoples.splice(index, 1);
+    };
 
   });
