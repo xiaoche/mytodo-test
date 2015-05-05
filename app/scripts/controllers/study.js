@@ -14,21 +14,28 @@ angular.module('mytodoApp')
     //   'AngularJS',
     //   'Karma'
     // ];
-    $scope.things = [
-    	{name: 'HTML5 Boilerplate' , use: 'Html' , age: '23'},
-    	{name: 'AngularJS' , use: 'JS' , age: '13'},
-    	{name: 'Karma' , use: 'Test' , age: '26'}
-    ]
-    $scope.phones = "Hello, World!";
+//    $scope.things = [
+//    	{name: 'HTML5 Boilerplate' , use: 'Html' , age: '23'},
+//    	{name: 'AngularJS' , use: 'JS' , age: '13'},
+//    	{name: 'Karma' , use: 'Test' , age: '26'}
+//    ]
+//    $scope.phones = "Hello, World!";
+//    
+//
+//    $scope.name = 'juhailin';
+//    $scope.age = 18 ;
+//
+//    $scope.$watch('age', function(){
+//    	if($scope.age < 18){
+//    		console.error('error');
+//    	}
+//    });
     
-
-    $scope.name = 'juhailin';
-    $scope.age = 18 ;
-
-    $scope.$watch('age', function(){
-    	if($scope.age < 18){
-    		console.error('error');
-    	}
-    })
+    $scope.peoples = [
+      {name: '小花' , sex: 'female' , age: '18'},
+      {name: '小明' , sex: 'male' , age: '22'},
+      {name: '小红' , sex: 'female' , age: '28'},
+      {name: '小龙' , sex: 'male' , age: '32'},
+    ];
 
   });

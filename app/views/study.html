@@ -19,17 +19,60 @@
 	<input type="text" ng-model="age" placeholder="Ender a number here">
 	
 	<h4>{{ name }} {{ age }}</h4> -->
-	<hr>
+<!--	<hr>
 	<h3>ngShow ngHide</h3>
 	<label for="">
 		show? <input type="checkbox" ng-model="checked">
 	</label>
-	<!-- <h4 ng-show="checked">xiaoche</h4> -->
+	 <h4 ng-show="checked">xiaoche</h4> 
 	<label for="">
 		English?
-		<input type="checkbox" ng-model="eng" ng-true-value="en.made-in-china" ng-false-value="cn.made-in-china">
+		<input type="checkbox" ng-model="checked" ng-true-value="123" ng-false-value="234">
 	</label>
-	<h4 ng-show="checked">{{eng}}</h4>
+	
+	<h4 ng-show="checked">{{eng}}</h4>-->
+		
+	<h3>ngRepeat 2</h3>
+	<input type="text" ng-model="search">
+	<ul>
+		<li ng-repeat="people in peoples | filter:search">
+			{{ people.name }} {{ people.sex }} {{ people.age }}
+			<span class="people-first-{{ $first }}" ng-show="$first">first</span>
+			<span class="people-middle-{{ $middle }}" ng-show="$middle">middle</span>
+			<span class="people-last-{{ $last }}" ng-show="$last">last</span>
+			<span class="people-odd-{{ $odd }}" ng-show="$odd">odd</span>
+			<span class="people-even-{{ $even }}" ng-show="$even">even</span>
+		</li>
+	</ul>
+	<style>
+		.people-first-true{
+			color: red;
+		}
+		.people-middle-true{
+			color: yellow;
+		}
+		.people-last-true{
+			color: green;
+		}
+		.people-odd-true{
+			color: blue;
+		}
+		.people-even-true{
+			color: purple;
+		}
+	</style>
+	<div class="well span6">
+		<h2 ng-repeat-start="people in peoples">{{ people.name }}</h2>
+		<div class="alert alert-info">
+			{{ people.name }} <span class="badge badeg-important">{{ people.age }}</span>
+		</div>
+		<div class="progress" ng-repeat-end>
+			<div class="progress-bar progress-bar-success progress-bar-striped active"  style="width: {{ people.age }}%">
+				<span class="sr-only"></span>
+			</div>
+		</div>
+		
+	</div>
 
 
 </div>
