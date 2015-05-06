@@ -211,5 +211,13 @@ angular.module('mytodoApp')
           phone: 6580
         }
       ];
+      
+//      ngchange--------------
+      $scope.result = '';
+      $scope.changeCount = 0;
+      $scope.change = function () {
+        $scope.changeCount++;
+        $scope.result = $scope.peo.name + '( 变更了' + $scope.changeCount + '次 )';
+      };
 
   });

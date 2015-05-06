@@ -203,10 +203,11 @@
 	</div>
 	
 	<div class="alert alert-info">
-		<select name="" id="" ng-model="peo" ng-options="member.name group by member.job for member in personnel">
+		<select name="" id="" ng-model="peo" ng-change="change();" ng-options="member.name group by member.job for member in personnel">
 			<option value="">--请选择人员--</option>
 		</select>
-		<div ng-show="peo!=null">您选择的是：{{ peo }}</div>
+		<div ng-show="peo!=null">您选择的是：{{ peo.name }}</div>
+		<div ng-show="result!=''">选择的是：{{ result }}</div>
 	</div>
 
 
